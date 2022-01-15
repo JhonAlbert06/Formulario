@@ -31,43 +31,43 @@ public class Ventana extends JFrame{
         panelPrincipal = new JPanel();
 		add(panelPrincipal);
 
-		JLabel id_ = new JLabel("ID");
+		JLabel id_ = new JLabel("ID ");
+		panelPrincipal.add(id_);
 		id = new JTextField(10);
-		add(id_);
-		add(id);
+		panelPrincipal.add(id);
 
 		activo = new JCheckBox("Activo");
-		add(activo);
+		panelPrincipal.add(activo);
 
-		JLabel alias_ = new JLabel("Alias");
-		add(alias_);
+		JLabel alias_ = new JLabel("Alias ");
+		panelPrincipal.add(alias_);
 		alias = new JTextField(10);
-		add(alias);
+		panelPrincipal.add(alias);
 
-		JLabel nombres_ = new JLabel("Nombres");
-		add(nombres_);
+		JLabel nombres_ = new JLabel("Nombres ");
+		panelPrincipal.add(nombres_);
 		nombres = new JTextField(10);
-		add(nombres);
+		panelPrincipal.add(nombres);
 
-		JLabel email_ = new JLabel("Email");
-		add(email_);
+		JLabel email_ = new JLabel("Email ");
+		panelPrincipal.add(email_);
 		email = new JTextField(10);
-		add(email);
+		panelPrincipal.add(email);
 		
-		JLabel clave_ = new JLabel("Clave");
-		add(clave_);
+		JLabel clave_ = new JLabel("Clave ");
+		panelPrincipal.add(clave_);
 		clave = new JPasswordField(16);
-		add(clave);
+		panelPrincipal.add(clave);
 
-		JLabel confirmacionClave_ = new JLabel("Confirma Clave");
-		add(confirmacionClave_);
+		JLabel confirmacionClave_ = new JLabel("Confirma Clave ");
+		panelPrincipal.add(confirmacionClave_);
 		confirmacionClave = new JPasswordField(16);
-		add(confirmacionClave);
+		panelPrincipal.add(confirmacionClave);
 
-		JLabel costoXhora_ = new JLabel("Costo X Hora");
-		add(costoXhora_);
+		JLabel costoXhora_ = new JLabel("Costo X Hora ");
+		panelPrincipal.add(costoXhora_);
 		costoxHora = new JTextField(" ", 10);
-		add(costoxHora);
+		panelPrincipal.add(costoxHora);
 
 		panelBotones = new JPanel();
 		add(panelBotones, BorderLayout.SOUTH);
@@ -105,7 +105,7 @@ public class Ventana extends JFrame{
 		setTitle("Registros de Usuarios");
         setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLayout(null);
+		
 
     }
 
