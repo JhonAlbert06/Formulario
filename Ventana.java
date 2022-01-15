@@ -12,14 +12,15 @@ import java.awt.*;
 
 public class Ventana extends JFrame{
 
-    private JPanel panelPrincipal;
 	private JPanel panelBotones;
+	private JButton btNuevo, btGuardar, btEliminar;
 
-    private String archivo;
-    private JButton btNuevo, btGuardar, btEliminar;
+	private JPanel panelIzquierdo, panelDerecho;
+    private String archivoNombre;
     private JMenuBar nivel;
 	private JCheckBox activo;
-	private JTextArea id, alias, nombres, email, clave, confirmacionClave, costoxHora;
+	private JTextField id, alias, nombres, email, costoxHora;
+	private JPasswordField clave, confirmacionClave;
 
     public Ventana(){
         init();
@@ -27,10 +28,26 @@ public class Ventana extends JFrame{
 
     private void init(){
 
-        panelPrincipal = new JPanel();
-        add(panelPrincipal);
-		panelPrincipal.setLayout(null);
+        panelIzquierdo = new JPanel();
+		add(panelIzquierdo, BorderLayout.WEST);
+
+		panelDerecho = new JPanel();
+		add(panelDerecho, BorderLayout.EAST);
 		
+		
+		JLabel id_ = new JLabel("ID ");
+		panelIzquierdo.add(id_);
+		id = new JTextField("", 10);
+		panelIzquierdo.add(id);
+
+		activo = new JCheckBox("Activo");
+		panelDerecho.add(activo);
+
+		JLabel alias_ = new JLabel("Alias ");
+		panelIzquierdo.add(alias_);
+		alias = new JTextField("", 10);
+		panelIzquierdo.add(alias);
+
 
 
 
@@ -43,7 +60,7 @@ public class Ventana extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e){
 				
-				archivo = null;
+				//archivo = null;
 			}
 		});
 		panelBotones.add(btNuevo);
@@ -66,7 +83,7 @@ public class Ventana extends JFrame{
 		});
 		panelBotones.add(btEliminar);
 
-        setSize(600, 300);
+        setSize(700, 400);
         setResizable(false);
 		setTitle("Registros de Usuarios");
         setVisible(true);
