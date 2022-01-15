@@ -15,7 +15,7 @@ public class Ventana extends JFrame{
 	private JPanel panelBotones;
 	private JButton btNuevo, btGuardar, btEliminar;
 
-	private JPanel panelIzquierdo, panelDerecho;
+	private JPanel panelPrincipal;
     private String archivoNombre;
     private JMenuBar nivel;
 	private JCheckBox activo;
@@ -28,29 +28,46 @@ public class Ventana extends JFrame{
 
     private void init(){
 
-        panelIzquierdo = new JPanel();
-		add(panelIzquierdo, BorderLayout.WEST);
+        panelPrincipal = new JPanel();
+		add(panelPrincipal);
 
-		panelDerecho = new JPanel();
-		add(panelDerecho, BorderLayout.EAST);
-		
-		
-		JLabel id_ = new JLabel("ID ");
-		panelIzquierdo.add(id_);
-		id = new JTextField("", 10);
-		panelIzquierdo.add(id);
+		JLabel id_ = new JLabel("ID");
+		id = new JTextField(10);
+		add(id_);
+		add(id);
 
 		activo = new JCheckBox("Activo");
-		panelDerecho.add(activo);
+		add(activo);
 
-		JLabel alias_ = new JLabel("Alias ");
-		panelIzquierdo.add(alias_);
-		alias = new JTextField("", 10);
-		panelIzquierdo.add(alias);
+		JLabel alias_ = new JLabel("Alias");
+		add(alias_);
+		alias = new JTextField(10);
+		add(alias);
 
+		JLabel nombres_ = new JLabel("Nombres");
+		add(nombres_);
+		nombres = new JTextField(10);
+		add(nombres);
 
+		JLabel email_ = new JLabel("Email");
+		add(email_);
+		email = new JTextField(10);
+		add(email);
+		
+		JLabel clave_ = new JLabel("Clave");
+		add(clave_);
+		clave = new JPasswordField(16);
+		add(clave);
 
+		JLabel confirmacionClave_ = new JLabel("Confirma Clave");
+		add(confirmacionClave_);
+		confirmacionClave = new JPasswordField(16);
+		add(confirmacionClave);
 
+		JLabel costoXhora_ = new JLabel("Costo X Hora");
+		add(costoXhora_);
+		costoxHora = new JTextField(" ", 10);
+		add(costoxHora);
 
 		panelBotones = new JPanel();
 		add(panelBotones, BorderLayout.SOUTH);
@@ -83,11 +100,12 @@ public class Ventana extends JFrame{
 		});
 		panelBotones.add(btEliminar);
 
-        setSize(700, 400);
+        setSize(600, 300);
         setResizable(false);
 		setTitle("Registros de Usuarios");
         setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLayout(null);
 
     }
 
