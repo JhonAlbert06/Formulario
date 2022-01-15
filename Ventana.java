@@ -13,7 +13,7 @@ import java.awt.*;
 public class Ventana extends JFrame{
 
 	private JPanel panelBotones;
-	private JButton btNuevo, btGuardar, btEliminar;
+	private JButton btNuevo, btGuardar, btEliminar, busqueda;
 
 	private JPanel panelPrincipal;
     private String archivoNombre;
@@ -28,20 +28,35 @@ public class Ventana extends JFrame{
 
     private void init(){
 
-        panelPrincipal = new JPanel();
+		/*
+		JPanel p = new JPanel();
+		p.setLayout(new BoxLayout(p, BoxLayout.PAGE_AXIS)); 
+		*/
+        
+		panelPrincipal = new JPanel();
+		panelPrincipal.setLayout(null);
 		add(panelPrincipal);
 
 		JLabel id_ = new JLabel("ID ");
+		id_.setBounds(10, 15, 20, 35);
 		panelPrincipal.add(id_);
 		id = new JTextField(10);
+		id.setBounds(25, 25, 100, 20);
 		panelPrincipal.add(id);
 
+		busqueda = new JButton("Busqueda");
+		busqueda.setBounds(130, 25, 50, 20);
+		panelPrincipal.add(busqueda);
+
 		activo = new JCheckBox("Activo");
+		activo.setBounds(400, 25, 100, 20);
 		panelPrincipal.add(activo);
 
 		JLabel alias_ = new JLabel("Alias ");
+		alias_.setBounds(10, 60, 50, 35);
 		panelPrincipal.add(alias_);
 		alias = new JTextField(10);
+		alias.setBounds(70, 60, 100, 20);
 		panelPrincipal.add(alias);
 
 		JLabel nombres_ = new JLabel("Nombres ");
