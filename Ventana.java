@@ -130,7 +130,7 @@ public class Ventana extends JFrame{
 		});
 		panelBotones.add(btEliminar);
 
-        setSize(600, 300);
+        setSize(580, 300);
         setResizable(false);
 		setTitle("Registros de Usuarios");
         setVisible(true);
